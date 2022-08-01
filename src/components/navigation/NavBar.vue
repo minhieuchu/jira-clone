@@ -4,7 +4,7 @@
       <div></div>
     </div>
     <div class="search-issue">
-      <i class="fa-solid fa-magnifying-glass"></i> <span>SEACH ISSUES</span>
+      <i class="fa-solid fa-magnifying-glass"></i> <span>SEARCH ISSUES</span>
     </div>
     <div class="create-issue">
       <i class="fa-solid fa-plus"></i> <span>CREATE ISSUE</span>
@@ -26,15 +26,45 @@
   color: whitesmoke;
   display: flex;
   flex-direction: column;
-  gap: 30px;
   font-size: 11px;
   text-align: left;
   font-weight: bold;
-  padding: 32px 15px 20px 21px;
   box-sizing: border-box;
+  transition: width 0.2s;
+}
+.navbar-container:hover {
+  width: 170px;
+}
+.navbar-container span {
+  visibility: hidden;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.navbar-container:hover span {
+  visibility: visible;
+}
+.navbar-container > div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-left: 21px;
+  cursor: pointer;
+}
+.navbar-container > div:first-child {
+  padding-left: 0;
+  margin-left: 20px;
+  margin-top: 36px;
+  margin-bottom: 20px;
+}
+.navbar-container > div:not(:first-child) {
+  height: 40px;
+}
+.navbar-container > div:not(:first-child):hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 .navbar-container > .about {
   margin-top: auto;
+  margin-bottom: 20px;
 }
 .navbar-container i {
   font-size: 19px;
@@ -57,8 +87,5 @@
 }
 .search-issue {
   margin-left: -1px;
-}
-span {
-  display: none;
 }
 </style>
