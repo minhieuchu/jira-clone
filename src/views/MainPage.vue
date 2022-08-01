@@ -1,7 +1,9 @@
 <template>
   <nav-bar></nav-bar>
   <side-bar></side-bar>
-  <router-view />
+  <div class="page-content">
+    <router-view />
+  </div>
 </template>
 
 <script lang="ts">
@@ -16,3 +18,15 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+.page-content {
+  position: fixed;
+  top: 0;
+  left: 280px;
+  width: calc(100% - 280px);
+  padding: 20px 36px;
+  text-align: left;
+  box-sizing: border-box;
+}
+</style>
