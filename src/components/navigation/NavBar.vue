@@ -22,7 +22,7 @@
   top: 0;
   height: 100vh;
   width: 60px;
-  background: #4b4bb7;
+  background: #0707b6;
   color: whitesmoke;
   display: flex;
   flex-direction: column;

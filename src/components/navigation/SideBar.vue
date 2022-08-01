@@ -27,7 +27,7 @@
   width: 220px;
   height: 100vh;
   padding: 15px;
-  background: #f4f4f4;
+  background: #f9f9f9;
   border-right: 1px solid #dddddd;
   font-size: 14px;
   font-weight: bold;
