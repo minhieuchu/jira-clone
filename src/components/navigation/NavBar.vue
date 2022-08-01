@@ -22,7 +22,7 @@
   top: 0;
   height: 100vh;
   width: 60px;
-  background: rgb(7, 71, 166);
+  background: #4b4bb7;
   color: whitesmoke;
   display: flex;
   flex-direction: column;
@@ -31,6 +31,7 @@
   font-weight: bold;
   box-sizing: border-box;
   transition: width 0.2s;
+  z-index: 1;
 }
 .navbar-container:hover {
   width: 170px;
@@ -83,7 +84,7 @@
 .app-symbol > div {
   width: 6px;
   height: 6px;
-  background: rgb(7, 71, 166);
+  background: #4b4bb7;
 }
 .search-issue {
   margin-left: -1px;
