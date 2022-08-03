@@ -9,9 +9,10 @@ export const ROUTE_NAMES = {
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/project/board",
-    name: "ProjectBoard",
+    name: ROUTE_NAMES.projectBoard,
     component: ProjectBoard,
   },
+  { path: "/:pathMatch(.*)*", redirect: { name: ROUTE_NAMES.projectBoard } },
 ];
 
 const router = createRouter({
