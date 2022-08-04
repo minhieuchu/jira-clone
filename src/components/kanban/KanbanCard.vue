@@ -1,6 +1,11 @@
 <template>
-  <div class="card-container">
-    <p>{{ cardContent }}</p>
+  <div
+    class="card-container"
+    :id="cardId"
+    draggable="true"
+    @dragstart="onDragStart"
+  >
+    <p>{{ cardContent }} - {{ cardId }}</p>
     <div class="card-footer">
       <!-- <i class="fa-solid fa-flag"></i> -->
       <i class="fa-regular fa-square-check"></i>
@@ -19,12 +24,24 @@ export const CardCategories = {
 };
 
 export default defineComponent({
+  setup() {
+    const cardId = Date.now().toString();
+    return { cardId };
+  },
   data() {
     return {
       category: CardCategories.STORY,
       cardContent:
         "Create authentication views and intergrate with existing system",
     };
+  },
+  methods: {
+    onDragStart(event: DragEvent) {
+      if (!(event.target instanceof HTMLElement)) {
+        return;
+      }
+      event.dataTransfer?.setData("cardId", event.target.id);
+    },
   },
 });
 </script>

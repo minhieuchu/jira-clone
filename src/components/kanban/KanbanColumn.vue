@@ -1,5 +1,10 @@
 <template>
-  <div class="column-container">
+  <div
+    class="column-container"
+    ref="columnContainer"
+    @dragover="onDragOver"
+    @drop="onDrop"
+  >
     <p class="column-name">
       {{ columnName }}
     </p>
@@ -22,6 +27,18 @@ export default defineComponent({
   components: {
     KanbanCard,
   },
+  methods: {
+    onDragOver(event: DragEvent) {
+      event.preventDefault();
+    },
+    onDrop(event: DragEvent) {
+      event.preventDefault();
+      const cardId = event.dataTransfer?.getData("cardId") || "";
+      const columnContainer = this.$refs.columnContainer as HTMLElement;
+      // eslint-disable-next-line
+      columnContainer.appendChild(document.getElementById(cardId)!);
+    },
+  },
 });
 </script>
 
@@ -41,6 +58,6 @@ export default defineComponent({
 .column-name {
   margin-top: 10px;
   margin-bottom: 10px;
-  padding-left: 3px;
+  padding-left: 7px;
 }
 </style>
