@@ -2,10 +2,10 @@
   <div class="card-container">
     <p>{{ cardContent }}</p>
     <div class="card-footer">
-      <!-- <i class="fa-regular fa-flag"></i> -->
+      <!-- <i class="fa-solid fa-flag"></i> -->
       <i class="fa-regular fa-square-check"></i>
       <i class="fa-solid fa-arrow-up"></i>
-      <!-- <i class="fa-solid fa-arrow-down"></i> -->
+      <!-- <i class="fa-solid fa-arrow-down"></i>s -->
     </div>
   </div>
 </template>
@@ -51,5 +51,15 @@ export default defineComponent({
   display: flex;
   gap: 9px;
   font-size: 15px;
+}
+.card-footer > :where(.fa-flag, .fa-arrow-down) {
+  color: mediumseagreen;
+}
+.card-footer > .fa-square-check {
+  color: #77c9e3;
+  font-weight: bold;
+}
+.card-footer > .fa-arrow-up {
+  color: #d63a3a;
 }
 </style>
