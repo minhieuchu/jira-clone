@@ -15,7 +15,20 @@
     <i class="fa-solid fa-magnifying-glass"></i>
     <input type="text" />
   </div>
+  <kanban-board></kanban-board>
 </template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+import KanbanBoard from "@/components/kanban/KanbanBoard.vue";
+
+export default defineComponent({
+  components: {
+    KanbanBoard,
+  },
+});
+</script>
+
 
 <style scoped>
 .project-name {
