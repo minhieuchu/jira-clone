@@ -6,7 +6,7 @@
     @drop="onDrop"
   >
     <p class="column-name">
-      {{ columnName }}
+      {{ status }}
     </p>
     <kanban-card></kanban-card>
     <kanban-card></kanban-card>
@@ -19,7 +19,7 @@ import KanbanCard from "./KanbanCard.vue";
 
 export default defineComponent({
   props: {
-    columnName: {
+    status: {
       type: String,
       required: true,
     },

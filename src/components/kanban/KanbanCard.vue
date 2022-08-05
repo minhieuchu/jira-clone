@@ -5,7 +5,7 @@
     draggable="true"
     @dragstart="onDragStart"
   >
-    <p>{{ cardContent }} - {{ cardId }}</p>
+    <p>{{ cardContent }}</p>
     <div class="card-footer">
       <!-- <i class="fa-solid fa-flag"></i> -->
       <i class="fa-regular fa-square-check"></i>
@@ -25,7 +25,7 @@ export const CardCategories = {
 
 export default defineComponent({
   setup() {
-    const cardId = Date.now().toString();
+    const cardId = Math.random().toString(36);
     return { cardId };
   },
   data() {

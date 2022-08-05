@@ -3,7 +3,7 @@
     <kanban-column
       v-for="(column, index) in columns"
       :key="index"
-      :columnName="column"
+      :status="column"
     ></kanban-column>
   </div>
 </template>
