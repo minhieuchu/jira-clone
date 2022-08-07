@@ -1,4 +1,4 @@
-import { IKanbanColumn } from '../interfaces/IKanbanColumn';
+import { IKanbanColumn } from '../interfaces/IKanbanBoard';
 import { convertApiResponseKanbanColumn, firebaseCollectionNames } from '../utils/apiUtils';
 import { JiraApiInstance } from './JiraApiBase';
 
