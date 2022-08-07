@@ -5,35 +5,40 @@
     draggable="true"
     @dragstart="onDragStart"
   >
-    <p>{{ cardContent }}</p>
+    <p>{{ cardInfo.title }}</p>
     <div class="card-footer">
-      <!-- <i class="fa-solid fa-flag"></i> -->
-      <i class="fa-regular fa-square-check"></i>
-      <i class="fa-solid fa-arrow-up"></i>
-      <!-- <i class="fa-solid fa-arrow-down"></i>s -->
+      <i
+        v-if="cardInfo.type == IssueCategories.STORY"
+        class="fa-solid fa-flag"
+      ></i>
+      <i v-else class="fa-regular fa-square-check"></i>
+      <i
+        v-if="cardInfo.priority == IssuePriorities.HIGH"
+        class="fa-solid fa-arrow-up"
+      ></i>
+      <i v-else class="fa-solid fa-arrow-down"></i>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-
-export const CardCategories = {
-  STORY: "story",
-  TASK: "task",
-};
+import { IKanbanIssue } from "@/services/interfaces/IKanbanBoard";
+import { defineComponent, PropType } from "vue";
+import {
+  IssueCategories,
+  IssuePriorities,
+} from "@/services/utils/kanbanDataUtils";
 
 export default defineComponent({
   setup() {
     const cardId = Math.random().toString(36);
-    return { cardId };
+    return { cardId, IssueCategories, IssuePriorities };
   },
-  data() {
-    return {
-      category: CardCategories.STORY,
-      cardContent:
-        "Create authentication views and intergrate with existing system",
-    };
+  props: {
+    cardInfo: {
+      type: Object as PropType<IKanbanIssue>,
+      required: true,
+    },
   },
   methods: {
     onDragStart(event: DragEvent) {
@@ -45,7 +50,6 @@ export default defineComponent({
   },
 });
 </script>
-
 
 <style scoped>
 .card-container {

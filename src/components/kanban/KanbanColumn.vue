@@ -6,16 +6,20 @@
     @drop="onDrop"
   >
     <p class="column-name">
-      {{ status }}
+      {{ convertColumnStatus(status) }}
     </p>
-    <kanban-card></kanban-card>
-    <kanban-card></kanban-card>
+    <kanban-card
+      v-for="(issue, index) in issues"
+      :key="index"
+      :cardInfo="issue"
+    ></kanban-card>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { computed, defineComponent } from "vue";
 import KanbanCard from "./KanbanCard.vue";
+import IssueModule from "@/store/modules/KanbanIssue";
 
 export default defineComponent({
   props: {
@@ -27,6 +31,10 @@ export default defineComponent({
   components: {
     KanbanCard,
   },
+  setup(props) {
+    const issues = computed(() => IssueModule.issuesWithStatus(props.status));
+    return { issues };
+  },
   methods: {
     onDragOver(event: DragEvent) {
       event.preventDefault();
@@ -37,6 +45,9 @@ export default defineComponent({
       const columnContainer = this.$refs.columnContainer as HTMLElement;
       // eslint-disable-next-line
       columnContainer.appendChild(document.getElementById(cardId)!);
+    },
+    convertColumnStatus(status: string): string {
+      return status.toUpperCase().replaceAll("_", " ");
     },
   },
 });

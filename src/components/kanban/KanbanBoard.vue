@@ -3,7 +3,7 @@
     <kanban-column
       v-for="(column, index) in columns"
       :key="index"
-      :status="convertColumnStatus(column.status)"
+      :status="column.status"
     ></kanban-column>
   </div>
 </template>
@@ -47,11 +47,6 @@ export default defineComponent({
         this.isLoading = false;
       }
     );
-  },
-  methods: {
-    convertColumnStatus(status: string): string {
-      return status.toUpperCase().replaceAll("_", " ");
-    },
   },
 });
 </script>

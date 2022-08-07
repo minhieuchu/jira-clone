@@ -12,6 +12,11 @@ class IssueModule extends VuexModule {
     return this._issues;
   }
 
+  get issuesWithStatus() {
+    return (status: string) =>
+      this._issues.filter((issue) => issue.status == status);
+  }
+
   @Mutation
   setIssues(issues: Array<IKanbanIssue>) {
     this._issues = issues;
