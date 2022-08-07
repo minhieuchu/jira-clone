@@ -4,7 +4,7 @@ import { IKanbanColumn } from '@/services/interfaces/IKanbanBoard';
 
 import store from '../index';
 
-@Module({ dynamic: true, store: store, name: "ColumnModule" })
+@Module({ dynamic: true, store: store, name: "KanbanColumn" })
 class ColumnModule extends VuexModule {
   _columns: Array<IKanbanColumn> = [];
 

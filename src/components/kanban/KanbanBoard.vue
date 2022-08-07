@@ -14,6 +14,7 @@ import KanbanColumn from "./KanbanColumn.vue";
 import { getKanbanColumns } from "@/services/jiraApi/JiraApiColumn";
 import { getKanbanIssues } from "@/services/jiraApi/JiraApiIssue";
 import ColumnModule from "@/store/modules/KanbanColumn";
+import IssueModule from "@/store/modules/KanbanIssue";
 
 export default defineComponent({
   components: {
@@ -23,7 +24,9 @@ export default defineComponent({
     getKanbanColumns().then((res) => {
       ColumnModule.setColumns(res);
     });
-    getKanbanIssues().then((res) => console.log(res));
+    getKanbanIssues().then((res) => {
+      IssueModule.setIssues(res);
+    });
   },
   data() {
     return {
