@@ -11,10 +11,14 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import KanbanColumn from "./KanbanColumn.vue";
+import { getKanbanColumns } from "@/services/jiraApi/JiraApiColumn";
 
 export default defineComponent({
   components: {
     KanbanColumn,
+  },
+  setup() {
+    getKanbanColumns().then((res) => console.log(res));
   },
   data() {
     return {
@@ -23,7 +27,6 @@ export default defineComponent({
   },
 });
 </script>
-
 
 <style scoped>
 .kanban-container {
