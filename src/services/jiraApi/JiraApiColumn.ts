@@ -1,6 +1,7 @@
+import { JiraApiInstance } from '@/services/jiraApi/JiraApiBase';
+
 import { IKanbanColumn } from '../interfaces/IKanbanBoard';
 import { convertApiResponseKanbanColumn, firebaseCollectionNames } from '../utils/apiUtils';
-import { JiraApiInstance } from './JiraApiBase';
 
 export const getKanbanColumns = async (): Promise<Array<IKanbanColumn>> => {
   const res = await JiraApiInstance.get(
