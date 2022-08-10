@@ -8225,6 +8225,15 @@
     "micromatch" "^4.0.0"
     "semver" "^7.3.4"
 
+"tsconfig-paths@^4.1.0":
+  "integrity" "sha512-AHx4Euop/dXFC+Vx589alFba8QItjF+8hf8LtmuiCwHyI4rHXQtOOENaM8kvYf5fR0dRChy3wzWIZ9WbB7FWow=="
+  "resolved" "https://registry.npmjs.org/tsconfig-paths/-/tsconfig-paths-4.1.0.tgz"
+  "version" "4.1.0"
+  dependencies:
+    "json5" "^2.2.1"
+    "minimist" "^1.2.6"
+    "strip-bom" "^3.0.0"
+
 "tsconfig@^7.0.0":
   "integrity" "sha512-vZXmzPrL+EmC4T/4rVlT2jNVMWCi/O4DIiSj3UHg1OE5kCKbk4mfrXc6dZksLgRM/TZlKnousKH9bbTazUWRRw=="
   "resolved" "https://registry.npmjs.org/tsconfig/-/tsconfig-7.0.0.tgz"
