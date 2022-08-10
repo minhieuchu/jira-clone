@@ -1,29 +1,25 @@
 # jira-clone
 
-## Project setup
-```
-yarn install
-```
+(This project is under development)
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+Visit: https://jira-b106a.web.app/
 
-### Compiles and minifies for production
-```
-yarn build
-```
+### Home Page
 
-### Run your unit tests
-```
-yarn test:unit
-```
+https://user-images.githubusercontent.com/25933120/183859889-4e923098-fe08-44d9-ba3a-41c1a853d633.mov
 
-### Lints and fixes files
-```
-yarn lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Tech stack
+
+### Frontend:
+
+- Vue 3 (vuex, vue-router, axios)
+
+### Backend:
+
+- Firebase Cloud Firestore
+
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
