@@ -30,6 +30,8 @@
     ]
   },
   "include": [
+    "src/**/*",
+    "package.json",
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
